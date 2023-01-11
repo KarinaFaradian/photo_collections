@@ -5,7 +5,7 @@ import './index.scss';
 const cats = [
   { "name": "All" },
   { "name": "Nature" },
-  { "name": "Mountines" },
+  { "name": "Mountaines" },
   { "name": "Architecture" },
   { "name": "Cities" }
 ]
@@ -22,7 +22,7 @@ useEffect (() => {
 
   const category = categoryId ? `category=${categoryId}` : '';
 
-    fetch(`https://63becd8ee348cb076218f6a1.mockapi.io/photo_collections?page=${page}&limit=4&${category}`)
+    fetch(`https://63becd8ee348cb076218f6a1.mockapi.io/photo_collections?page=${page}&limit=3&${category}`)
       .then((res) => res.json())
       .then((json) => {
         setCollections(json);
@@ -75,7 +75,7 @@ useEffect (() => {
         )}
       </div>
       <ul className="pagination">
-        {[...Array(3)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
             <li onClick={() => setPage(i + 1)} className={page === i + 1 ? 'active' : ''}>
               {i + 1}
             </li>
